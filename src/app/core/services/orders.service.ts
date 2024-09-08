@@ -14,7 +14,7 @@ export class OrdersService {
   myHeaders:any = {Token : localStorage.getItem('userToken')}
 
   checkOut(idCart:string|null ,shippingDetails:object):Observable<any>{
-    return this._HttpClient.post(`${environment.baseUrl}/api/v1/orders/checkout-session/${idCart}?url=${environment.urlServer}`,
+    return this._HttpClient.post(`${environment.baseUrl}/api/v1/orders/checkout-session/${idCart}?url=https://ecommerce-routing17.netlify.app`,
       
       { "shippingAddress": shippingDetails }
     )
